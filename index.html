@@ -92,11 +92,11 @@
                         <canvas id="Grafico3" width="400" height="200" class="mb-5"></canvas>
                     </div>
 
-                    <div class="col-md-6 mx-auto">
+                    <div class="col-md-10 mx-auto">
                         <p>Sus caracteristicas raciales</p>
 
                         <canvas id="Grafico4" width="400" height="200" class="mb-5"></canvas>
-
+                    <div class="col-md-6 mx-auto">
                         <p>Y, por ultimo, su genero</p>
                         <canvas id="Grafico5" width="400" height="200" class="mb-5"></canvas>
                     </div>
@@ -125,7 +125,7 @@
         <footer class="bg-cierre">
             <div class="container">
                 <div class="row py-3">
-                    <div class="col text-center"><small>Nombre Apellido | 12 de mayo, 2022</small></div>
+                    <div class="col text-center"><small> Catalina Pacheco | 12 de mayo, 2022</small></div>
                 </div>
             </div>
         </footer>
@@ -239,7 +239,7 @@
                 //gráficar
                 //poblacion nueva york
                 new Chart(document.getElementById("Grafico1").getContext("2d"), {
-                    type: "pie",
+                    type: "doughnut",
                     data: {
                         labels: ["blanco", "latino", "afroamericano", "asiatico", "nativo americano", "dos o mas grupos"],
                         datasets: [{ data: [31, 29, 20, 16, 1, 3], label: "porcentaje de la población", backgroundColor: ["#F06EC4", "#AB72F7", "#7396E0", "#495F8F", "#8856a7", "#34147f"] }],
@@ -321,7 +321,7 @@
                 });
                 //etnia victimarios
                 new Chart(document.getElementById("Grafico4").getContext("2d"), {
-                    type: "pie",
+                    type: "bar",
                     data: {
                         labels: ["blancos", "negros", "latinos", "asiaticos"],
                         datasets: [
@@ -332,10 +332,24 @@
                             },
                         ],
                     },
-                    options: {
+               options: {
                         animation: false,
+                        indexAxis: "y",
                         layout: {
                             padding: 10,
+                        },
+                        scales: {
+                            x: {
+                                ticks: { color: "#eee" },
+                            },
+                            y: {
+                                ticks: { color: "#eee" },
+                            },
+                        },
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
                         },
                     },
                 });

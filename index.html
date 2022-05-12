@@ -148,6 +148,8 @@
                 var losHombres = 0;
                 //Grupos atacados
                 var lesLGBT = 0;
+                var lesGay = 0;
+                var lesTrans = 0;
                 var lesJudios = 0;
                 var lesAfroamericanos = 0;
                 var lesAapi = 0;
@@ -189,11 +191,11 @@
                     } else if (d.BiasMotivation == "ANTIJEWISH") {
                         lesJudios = lesJudios + 1;
                     } else if (d.BiasMotivation == "ANTIMALE_HOMOSEXUAL") {
-                        lesLGBT = lesLGBT + 1;
+                        lesGay = lesGay + 1;
                     } else if (d.BiasMotivation == "ANTI_LGBT") {
                         lesLGBT = lesLGBT + 1;
                     } else if (d.BiasMotivation == "ANTITRANSGENDER") {
-                        lesLGBT = lesLGBT + 1;
+                        lesTrans = lesTrans + 1;
                     } else if (d.BiasMotivation == "ANTIWHITE") {
                         lesBlancos = lesBlancos + 1;
                     } else {
@@ -253,36 +255,17 @@
                 });
                 //victimas
                 new Chart(document.getElementById("Grafico2").getContext("2d"), {
-                    type: "bar",
+                   type: "bar",
                     data: {
-                        labels: ["personas asiaticas", "personas negras", "mujeres", "personas musulmanas", "personas judias", "personas lgbt", "personas blancas", "Otros"],
+                        labels: ["Vuelo 11", "Vuelo 175", "Vuelo 77", "Vuelo 93"],
                         datasets: [
-                            {
-                                data: [lesAapi, lesAfroamericanos, lesMujeres, lesMusulmanes, lesJudios, lesLGBT, lesBlancos, lesOtres],
-                                label: "personas atacadas de este grupo",
-                                backgroundColor: ["#728FCE", "#4863A0", "#2B547E", "#36454F", "#29465B", "#2B3856", "#123456", "#151B54"],
-                            },
+                            { data: [lesAapi, lesAfroamericanos, lesBlancos], label: "etnia", backgroundColor: ["#4596D1"] },
+                            { data: [lesJudios, lesMusulmanes], label: "religión", backgroundColor: ["#D3D3D3"] },
+                            { data: [lesGay, lesLGBT, lesTrans, lesMujeres], label: "Sexualida y género", backgroundColor: ["#2B3856"] },
                         ],
                     },
                     options: {
-                        animation: false,
                         indexAxis: "y",
-                        layout: {
-                            padding: 10,
-                        },
-                        scales: {
-                            x: {
-                                ticks: { color: "#eee" },
-                            },
-                            y: {
-                                ticks: { color: "#eee" },
-                            },
-                        },
-                        plugins: {
-                            legend: {
-                                display: false,
-                            },
-                        },
                     },
                 });
                 //edad victimarios

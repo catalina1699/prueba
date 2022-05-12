@@ -18,7 +18,7 @@
             :root {
                 --bs-body-font-family: "Josefin sans", sans-serif;
                 --bs-body-color: #f7f7e6;
-                --bs-body-bg: #030114;
+                --bs-body-bg: #353839;
             }
             /* Una propuesta más relacionada con "cultura de diseño": https://es.wikipedia.org/wiki/I_Love_New_York  */
             h1 {
@@ -50,7 +50,7 @@
                             I<span>💔</span><br />
                             NY
                         </h1>
-                        <h3 class="fs-5 mb-3">Hate crimes in New York City, based in data from 2020.</h3>
+                        <h3 class="fs-5 mb-3">Crimenes de Odio en la ciudad de Nueva York, Basado en datos del 2020.</h3>
                         <p>By <a href="#">Catalina Pacheco</a></p>
                         <p class="small">PUBLICADO EL 12 DE MAYO, 2022</p>
                     </div>
@@ -355,7 +355,7 @@
                 });
                 //genero victimarios
                 new Chart(document.getElementById("Grafico5").getContext("2d"), {
-                    type: "pie",
+                    type: "doughnut",
                     data: {
                         labels: ["masculino", "femenino"],
                         datasets: [

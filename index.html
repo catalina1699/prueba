@@ -138,6 +138,65 @@
         ></script>
         <!-- Un gran script, que contiene una función asincrónica para ir a buscar un JSON con -->
         <script>
+            const vicky = ["etnia","religion","sexualidad y género"]({count: 3});
+                const datitos = {
+  labels: vicky,
+  datasets: [
+    {
+      label: 'personas asiaticas',
+      data:  [lesAapi],
+      backgroundColor:  ["#7b68ee"],
+      stack: 'Stack 0',
+    },
+    {
+      label: 'personas negras',
+      data:  [lesAfroamericanos],
+      backgroundColor:  ["#6495ed"],
+      stack: 'Stack 0',
+    },
+    {
+      label: 'personas blancas',
+      data:  [lesBlancos],
+      backgroundColor:  ["#00b8b8#00b8b8"],
+      stack: 'Stack 0',
+    },
+      {
+      label: 'personas judias',
+      data:  [lesJudios],
+      backgroundColor:  ["#7b68ee"],
+      stack: 'Stack 1',},
+       {
+      label: 'personas musulmanas',
+      data:  [lesMusulmanes],
+      backgroundColor:  ["#6495ed"],
+      stack: 'Stack 1',
+    },
+      {
+      label: 'hombres gay',
+      data:  [lesGay],
+      backgroundColor: ["#7b68ee"],
+      stack: 'Stack 2',},
+           {
+      label: 'personas lgbt',
+      data:  [lesLGBT],
+      backgroundColor:  ["#6495ed"],
+      stack: 'Stack 2',
+    },
+    {
+      label: 'personas trans',
+      data: [lesTrans],
+      backgroundColor: ["#00b8b8"],
+      stack: 'Stack 2',
+    },
+           {
+      label: 'mujeres',
+      data: [lesMujeres],
+      backgroundColor: ["#73c2fb"],
+      stack: 'Stack 2',
+    },
+    }, 
+  ]
+};
             async function visualizacion() {
                 //el fetch
                 const consulta = await fetch("https://raw.githubusercontent.com/catalina1699/json_clase8/main/datos.json");
@@ -296,7 +355,8 @@
     },
     }, 
   ]
-};
+} );
+                
                 //gráficar
                 //poblacion nueva york
                 new Chart(document.getElementById("Grafico1").getContext("2d"), {

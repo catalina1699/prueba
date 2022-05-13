@@ -238,6 +238,65 @@
                         asiaticx = asiaticx + 1;
                     }
                 });
+                const vicky = ["etnia","religion","sexualidad y género"]({count: 3});
+                const datitos = {
+  labels: vicky,
+  datasets: [
+    {
+      label: 'personas asiaticas',
+      data:  [lesAapi],
+      backgroundColor:  ["#7b68ee"],
+      stack: 'Stack 0',
+    },
+    {
+      label: 'personas negras',
+      data:  [lesAfroamericanos],
+      backgroundColor:  ["#6495ed"],
+      stack: 'Stack 0',
+    },
+    {
+      label: 'personas blancas',
+      data:  [lesBlancos],
+      backgroundColor:  ["#00b8b8#00b8b8"],
+      stack: 'Stack 0',
+    },
+      {
+      label: 'personas judias',
+      data:  [lesJudios],
+      backgroundColor:  ["#7b68ee"],
+      stack: 'Stack 1',},
+       {
+      label: 'personas musulmanas',
+      data:  [lesMusulmanes],
+      backgroundColor:  ["#6495ed"],
+      stack: 'Stack 1',
+    },
+      {
+      label: 'hombres gay',
+      data:  [lesGay],
+      backgroundColor: ["#7b68ee"],
+      stack: 'Stack 2',},
+           {
+      label: 'personas lgbt',
+      data:  [lesLGBT],
+      backgroundColor:  ["#6495ed"],
+      stack: 'Stack 2',
+    },
+    {
+      label: 'personas trans',
+      data: [lesTrans],
+      backgroundColor: ["#00b8b8"],
+      stack: 'Stack 2',
+    },
+           {
+      label: 'mujeres',
+      data: [lesMujeres],
+      backgroundColor: ["#73c2fb"],
+      stack: 'Stack 2',
+    },
+    }, 
+  ]
+};
                 //gráficar
                 //poblacion nueva york
                 new Chart(document.getElementById("Grafico1").getContext("2d"), {
@@ -255,19 +314,29 @@
                 });
                 //victimas
                 new Chart(document.getElementById("Grafico2").getContext("2d"), {
-                   type: "bar",
-                    data: {
-                        labels: ["Vuelo 11", "Vuelo 175", "Vuelo 77", "Vuelo 93"],
-                        datasets: [
-                            { data: [lesAapi, lesAfroamericanos, lesBlancos], label: "etnia", backgroundColor: ["#4596D1"] },
-                            { data: [lesJudios, lesMusulmanes], label: "religión", backgroundColor: ["#D3D3D3"] },
-                            { data: [lesGay, lesLGBT, lesTrans, lesMujeres], label: "Sexualida y género", backgroundColor: ["#2B3856"] },
-                        ],
-                    },
-                    options: {
-                        indexAxis: "y",
-                    },
-                });
+                   type: 'bar',
+  data: datitos,
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Chart.js Bar Chart - Stacked'
+      },
+    },
+    responsive: true,
+    interaction: {
+      intersect: false,
+    },
+    scales: {
+      x: {
+        stacked: true,
+      },
+      y: {
+        stacked: true
+      }
+    }
+  }; 
+});  
                 //edad victimarios
                 new Chart(document.getElementById("Grafico3").getContext("2d"), {
                     type: "bar",

@@ -244,7 +244,7 @@
                   const datitos = {
        labels:["etnia","religion","sexualidad y genero"],
        datasets:[ 
-    {
+    ({
       label: 'personas asiaticas',
       data:  [lesAapi],
       backgroundColor:  ["#7b68ee"],
@@ -261,8 +261,8 @@
       data:  [lesBlancos],
       backgroundColor:  ["#00b8b8"],
       stack: 'Stack 1',
-    },
-      {
+    }),
+      ({
       label: 'personas judias',
       data:  [lesJudios],
       backgroundColor:  ["#7b68ee"],
@@ -295,7 +295,7 @@
       data: [lesMujeres],
       backgroundColor: ["#73c2fb"],
       stack: 'Stack 3',
-    },]
+    }),]
 };
                 
                 //gráficar
@@ -410,7 +410,7 @@
                             {
                                 data: [losHombres, lasMujeres],
                                 label: "Atacantes de este genero",
-                                backgroundColor: ["#728FCE", "#4863A0"],
+                                backgroundColor: ["#2B547E", "#4863A0"],
                             },
                         ],
                     },

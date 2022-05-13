@@ -243,7 +243,7 @@
                   const datitos = {
        labels:["etnia","religion","sexualidad y genero"],
        datasets:[ 
-    ({
+      {
       label: 'personas asiaticas',
       data:  [lesAapi],
       backgroundColor:  ["#7b68ee"],
@@ -260,8 +260,8 @@
       data:  [lesBlancos],
       backgroundColor:  ["#00b8b8"],
       stack: 'Stack 1',
-    }),
-      ({
+    },
+      {
       label: 'personas judias',
       data:  [lesJudios],
       backgroundColor:  ["#7b68ee"],
@@ -271,8 +271,8 @@
       data:  [lesMusulmanes],
       backgroundColor:  ["#6495ed"],
       stack: 'Stack 2',
-    }),
-      ({
+    },
+      {
       label: 'hombres gay',
       data:  [lesGay],
       backgroundColor: ["#7b68ee"],
@@ -294,7 +294,7 @@
       data: [lesMujeres],
       backgroundColor: ["#73c2fb"],
       stack: 'Stack 3',
-    }),]
+    },]
 };
                 
                 //gráficar
@@ -318,6 +318,7 @@
   data: datitos,
   options: {
       indexAxis: "y",
+      layout: { padding: 10, },
     responsive: true,
     interaction: {
       intersect: false,
@@ -327,7 +328,7 @@
         stacked: true,
       },
       y: {
-        stacked: false
+        stacked: true,
       }
     }
   } 
